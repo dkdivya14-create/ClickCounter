@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="clickcountersheets.css">
+</head>
+<body>
+    <div class="main_container">
+        <div class="input1">
+            <input type="number" id="num" value="0" readonly> 
+            <div class="input2">
+                <button id="refresh" onclick="refreshButton()">X</button>
+            </div>
+        </div>
+        <button id="addition" onclick="addButton()">+</button>
+        <button id="subtraction" onclick="subtractButton()">-</button>
+    </div>
+
+  <script>
+        const number = document.getElementById("num");
+
+        function refreshButton() {
+            number.value = 0; 
+        }
+
+        function addButton() {
+            let currentValue = parseInt(number.value);
+            number.value = currentValue + 1;
+        }
+
+        function subtractButton() {
+            let currentValue = parseInt(number.value); 
+             if (currentValue > 0) {
+                number.value = currentValue - 1;
+                return;
+            }
+            
+        }
+    </script>
+</body>
+</html>
